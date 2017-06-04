@@ -44,3 +44,28 @@ static Ship createShip(char ship_length) {
 	return(Ship(stern_x, stern_y, bow_x, bow_y));
 }
 
+void run() {
+	// делает ходы makeMove
+	//первым начинает ходить player1
+	char * move1[] = movemakeMove();
+	bow_x = Ship::getBow[0]// как мне взять только одно значение...
+}
+
+//bool * makeMove() {  //сделать ход (сгенерить х и у удара. получить ответ - убит / ранен)
+//	move_x = rand() % 9 + 0;
+//	move_y = rand() % 9 + 0;
+//
+//}
+
+char * makeMove() {
+	move_x = rand() % 9 + 0;
+	move_y = rand() % 9 + 0;
+	return(move_x, move_y);
+}
+
+Game() {
+	Ship * ships_player1 = createFleet();
+	Ship * ships_player2 = createFleet();
+	Player player1(ships_player1);
+	Player player2(ships_player2);
+}

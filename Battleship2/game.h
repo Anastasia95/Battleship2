@@ -11,6 +11,7 @@ class Game {
 		static Ship * createFleet(); // создаем флот
 		static Ship createShip(char ship_length); //создать корабль
 		void run();
-		bool * makeMove(); //сделать ход (сгенерить х и у удара. получить ответ - убит / ранен)
+		//bool * makeMove(); //сделать ход (сгенерить х и у удара. получить ответ - убит / ранен)
+		char * makeMove();
 		Game();
 }
