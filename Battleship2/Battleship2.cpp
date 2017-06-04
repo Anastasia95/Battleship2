@@ -3,14 +3,15 @@
 
 #include "stdafx.h"
 #include <iostream>
+#pragma once
+#include "game.h"
+#include "player.h"
+#include "ship.h"
 
 
 int main()
 {
-	
-	int x = rand() % 1 + 0;
-	std::cout << x;
-	system("pause");
+	//Game.run();
 	return 0;
 }
 

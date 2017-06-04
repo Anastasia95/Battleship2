@@ -1,27 +1,11 @@
-
-
 #pragma once
 #include "game.h"
 #include "player.h"
 #include "ship.h"
 
-		char stern[2]; //корма
-		char bow[2]; //нос корабля
-		bool is_killed, is_hitted; //убит или ранен
-		void setStern(char stern_x, char stern_y);
-		void setBow(char bow_x, char bow_y);
-		void setKilled(is_killed);
-		void setHitted(is_hitted);
-		char * getStern();
-		char * getBow();
-		bool isKilled();
-		bool isHitted();
-		char length();
-		Ship(char stern_x, char stern_y, char bow_x, char bow_y);
-
 void setStern(char stern_x, char stern_y) {
 	stern[0] = stern_x;
-	stern[1] = stern_y
+	stern[1] = stern_yж
 };
 
 void setBow(char bow_x, char bow_y) {
@@ -38,7 +22,7 @@ void setHitted(bool is_hitted) {
 };
 
 char getStern() {
-	return(stern[]);
+	return(stern[]); // ?? не знаю как вернуть массив значений
 };
 
 char getBow() {
@@ -53,4 +37,15 @@ char length() {
 	if (l1 != 0) && (l2 == 0) { l = l1 };
 	if (l1 == 0) && (l2 == 0) { l = 1 };
 	return (l);
+}
+
+// конструктор класса корабль??
+
+Ship(char stern_x, char stern_y, char bow_x, char bow_y) {
+	this->stern[0] = stern_x;
+	this->stern[1] = stern_y;
+	this->bow[0] = bow_x;
+	this->bow[1] = bow_y;
+	this->is_killed = 0;  //наверное надо по умолчанию задать что корабли целые ??
+	this->is_hitted = 0;
 }
