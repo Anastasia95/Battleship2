@@ -5,7 +5,7 @@
 
 void setStern(char stern_x, char stern_y) {
 	stern[0] = stern_x;
-	stern[1] = stern_yж
+	stern[1] = stern_y;
 };
 
 void setBow(char bow_x, char bow_y) {
@@ -21,22 +21,23 @@ void setHitted(bool is_hitted) {
 	this->is_hitted = is_hitted;
 };
 
-char getStern() {
-	return(stern[]); // ?? не знаю как вернуть массив значений
+char* getStern() {
+	return stern; // ?? не знаю как вернуть массив значений
 };
+// char * stern = getStern();
 
 char getBow() {
 	return(bow[]);
 };
 
 char length() {
-	char l1 = abs(stern_x - bow_x);
-	char l2 = abs(stern_y - bow_y);
+	char lx = abs(stern_x - bow_x) + 1;
+	char ly = abs(stern_y - bow_y) + 1;
 	char l;
-	if (l1 == 0) && (l2 != 0) { l = l2 };
-	if (l1 != 0) && (l2 == 0) { l = l1 };
-	if (l1 == 0) && (l2 == 0) { l = 1 };
-	return (l);
+	if (lx == 1 && ly != 1) { l = ly };
+	else if (lx != 1 && ly == 1) { l = lx };
+	else if (lx == 1 && ly == 1) { l = 1 };
+	return l;
 }
 
 // конструктор класса корабль??

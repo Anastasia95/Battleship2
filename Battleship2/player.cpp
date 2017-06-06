@@ -15,6 +15,6 @@ char CountShips() {
 
 //конструктор игрока
 Player(Ship ships[]) {
-	ships[] = Game.createFleet(); //что то не так...
-	return(ships[]); //?
+	this->ships = ships;
+	//Player(createFleet()) - inside Game.cpp
 }
