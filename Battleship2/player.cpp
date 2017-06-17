@@ -3,18 +3,23 @@
 #include "player.h"
 #include "ship.h"
 
-char CountShips() {
+//конструктор игрока
+Player::Player(Ship ships[]) {
+	this->ships = ships;
+	battlefield = {0};
+	opponent_field = {0};
+}
+
+char Player::CountShips() {
 	char count = 0;
 	for (char i = 0; i < 10; i++) {
-		if ((ships[i].is_killed == 0) && (ships[i].is_hitted == 0)) { // можно ли так с массивом кораблей обращаться??
+		if ((!ships[i].is_killed) && (!ships[i].is_hitted)) { 
 			count++;
 		}
 	}
-	return(count);
+	return count;
 };
 
-//конструктор игрока
-Player(Ship ships[]) {
-	this->ships = ships;
-	//Player(createFleet()) - inside Game.cpp
+void Player::setBattlefield(char ** battlefield) {
+	this->battlefield = battlefield;
 }

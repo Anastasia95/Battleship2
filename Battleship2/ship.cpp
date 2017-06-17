@@ -3,50 +3,70 @@
 #include "player.h"
 #include "ship.h"
 
-void setStern(char stern_x, char stern_y) {
+// конструктор класса корабль
+
+Ship::Ship(char bow_x, char bow_y, char direction, char length) {
+	//this->stern[0] = stern_x;
+	//this->stern[1] = stern_y;
+	this->bow[0] = bow_x;
+	this->bow[1] = bow_y;
+	this->is_killed = 0;  
+	this->is_hitted = 0;
+	this->direction = direction;
+	this->length = length;
+}
+
+/*void Ship::setStern(char stern_x, char stern_y) {
 	stern[0] = stern_x;
 	stern[1] = stern_y;
-};
+}*/;
 
-void setBow(char bow_x, char bow_y) {
+void Ship::setBow(char bow_x, char bow_y) {
 	bow[0] = bow_x;
 	bow[1] = bow_y;
 };
 
-void setKilled(bool is_killed) {
+void Ship::setKilled(bool is_killed) {
 	this->is_killed = is_killed;
 };
 
-void setHitted(bool is_hitted) {
+void Ship::setHitted(bool is_hitted) {
 	this->is_hitted = is_hitted;
 };
 
-char* getStern() {
-	return stern; // ?? не знаю как вернуть массив значений
-};
+//char * Ship::getStern() {
+//	return stern;
+//};
 // char * stern = getStern();
 
-char getBow() {
-	return(bow[]);
+void Ship::setDirection(char ) {
+	this->direction = direction;
 };
 
-char length() {
-	char lx = abs(stern_x - bow_x) + 1;
-	char ly = abs(stern_y - bow_y) + 1;
-	char l;
-	if (lx == 1 && ly != 1) { l = ly };
-	else if (lx != 1 && ly == 1) { l = lx };
-	else if (lx == 1 && ly == 1) { l = 1 };
-	return l;
+void Ship::setLength(char length) {
+	this->length = length;
 }
 
-// конструктор класса корабль??
+char * Ship::getBow() {
+	return bow;
+};
 
-Ship(char stern_x, char stern_y, char bow_x, char bow_y) {
-	this->stern[0] = stern_x;
-	this->stern[1] = stern_y;
-	this->bow[0] = bow_x;
-	this->bow[1] = bow_y;
-	this->is_killed = 0;  //наверное надо по умолчанию задать что корабли целые ??
-	this->is_hitted = 0;
-}
+char Ship::getDirection() {
+	return direction;
+};
+
+char Ship::getLength() {
+	return length;
+};
+
+
+//char Ship::length() {
+//	char lx = abs(stern_x - bow_x) + 1;
+//	char ly = abs(stern_y - bow_y) + 1;
+//	char l;
+//	if (lx == 1 && ly != 1) { l = ly };
+//	else if (lx != 1 && ly == 1) { l = lx };
+//	else if (lx == 1 && ly == 1) { l = 1 };
+//	return l;
+//}
+
