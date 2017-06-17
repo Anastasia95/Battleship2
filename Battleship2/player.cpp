@@ -1,21 +1,16 @@
-#pragma once
-#include "game.h"
 #include "player.h"
-#include "ship.h"
 
 //конструктор игрока
 Player::Player(Ship ships[]) {
 	this->ships = ships;
-	battlefield = {0};
-	opponent_field = {0};
+	battlefield = {{0}, {0}};
+	opponent_field = {{0}, {0}};
 }
 
-char Player::CountShips() {
+char Player::countShips() {
 	char count = 0;
-	for (char i = 0; i < 10; i++) {
-		if ((!ships[i].is_killed) && (!ships[i].is_hitted)) { 
-			count++;
-		}
+	for (char i = 0; i < NUM_OF_SHIPS; i++) {
+		if (!ships[i].isKilled()) count++;
 	}
 	return count;
 };

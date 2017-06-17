@@ -1,7 +1,5 @@
 #pragma once
-#include "game.h"
 #include "player.h"
-#include "ship.h"
 
 class Game {
 	private:
@@ -13,10 +11,9 @@ class Game {
 		// дописать вторую доску для игроков
 	public:
 		Game();
-		static Ship * createFleet(bool * field); // создаем флот
-		static Ship createShip(char ship_length, bool * field); //создать корабль
-		//static Ship createShip(char ship_length); //создать корабль
+		static Ship * createFleet(); // создаем флот
+		// TODO: createFleet поменять на createPlayer и возвращать не Ship*, а Player
+		static Ship createShip(char ship_length); //создать корабль
 		void run();
-		//bool * makeMove(); //сделать ход (сгенерить х и у удара. получить ответ - убит / ранен)
 		char * makeMove();
 }

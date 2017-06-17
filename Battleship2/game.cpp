@@ -1,23 +1,26 @@
-#pragma once
 #include "game.h"
-#include "player.h"
-#include "ship.h"
-
 
 Game::Game() {
-	Player player1(createFleet(payer1));
-	Player player2(createFleet());
+	Player player1 = createPlayer();
+	Player player2 = createPlayer();
 	//
 }
 
 static Game::Ship * createFleet() {
-	Ship * fleet[10]; //массив из 10 кораблей
-	char field[10][10] = {0}; // массив поля кораблей
+
+	// TODO: меняем на createPlayer(). Логику не трогаем (если она конечно правильная). После создания
+	// и расстановки кораблей отдаем массив кораблей конструктору Player и затем сетим его батлфилд.
+	// Делаем return player.
+
+	Ship fleet[NUM_OF_SHIPS]; //массив из 10 кораблей
+	char field[FIELD_SIZE][FIELD_SIZE] = {{0}, {0}}; // массив поля кораблей
 	Ship ship1 = createShip(4); // создаем 4хпалубник
 	char * bow1 = ship1.getBow();
-	fillField(bow1, direction, length, field);
+	fillField(bow1, direction, length, field); // это что за функция? не нашел объявления
 	fleet[0] = ship1;
 
+	// Дальше не смотрел, но походу там дичь какая-то, надо разобраться!
+	
 	Ship ship2 = createShip(3);// создаем 3хпалубник
 	char * bow2 = ship2.getBow();
 	bool f2 = 0; //флаг существования корабля

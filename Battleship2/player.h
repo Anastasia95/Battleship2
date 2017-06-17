@@ -1,15 +1,14 @@
 #pragma once
-#include "game.h"
-#include "player.h"
+#include "constants.h"
 #include "ship.h"
 
 class Player {
-	private:
-		Ship ships[10]; // изначально у игрока 10 кораблей
-		char battlefield[10][10];
-		char opponent_field[10][10];
+	private:		
+		Ship ships[NUM_OF_SHIPS]; // изначально у игрока 10 кораблей
+		char battlefield[FIELD_SIZE][FIELD_SIZE];
+		char opponent_field[FIELD_SIZE][FIELD_SIZE];
 	public:
 		Player(Ship ships[]);
-		char CountShips();
+		char countShips();
 		void makeMove();
 }

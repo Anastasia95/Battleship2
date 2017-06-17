@@ -1,6 +1,3 @@
-#pragma once
-#include "game.h"
-#include "player.h"
 #include "ship.h"
 
 // конструктор класса корабль
@@ -22,8 +19,8 @@ Ship::Ship(char bow_x, char bow_y, char direction, char length) {
 }*/;
 
 void Ship::setBow(char bow_x, char bow_y) {
-	bow[0] = bow_x;
-	bow[1] = bow_y;
+	this->bow[0] = bow_x; // раз в конструкторе сделала this->, то и тут давай по аналогии
+	this->bow[1] = bow_y;
 };
 
 void Ship::setKilled(bool is_killed) {
@@ -39,7 +36,7 @@ void Ship::setHitted(bool is_hitted) {
 //};
 // char * stern = getStern();
 
-void Ship::setDirection(char ) {
+void Ship::setDirection(char direction) {
 	this->direction = direction;
 };
 
